@@ -8,29 +8,32 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --  library UNISIM;
 --  use UNISIM.VComponents.all;
 
---This entity is generic for all design samples below this is why so complicated 
+-- This entity is generic for all design samples below this is why so complicated 
 
 entity register_simple is
-    Port ( rst: in std_logic;
-    		 dir: in std_logic; 
-			 en: in std_logic ; 
-           clk : in std_logic;
-           reg_in : in std_logic_vector(3 downto 0); 
-           reg_out : out std_logic_vector(3 downto 0);
-           reg_out_p : out std_logic_vector(3 downto 0);
-		 regSL : inout std_logic_vector(3 downto 0);		--inout allow writing and reading this signal from within the architecture
-		 regSR : inout std_logic_vector(3 downto 0);   --inout allow writing and reading this signal from within the architecture
-		 regSLa : inout std_logic_vector(3 downto 0);		--inout allow writing and reading this signal from within the architecture
-		 regSRa : inout std_logic_vector(3 downto 0);   --inout allow writing and reading this signal from within the architecture
-		 regSdir : inout std_logic_vector(3 downto 0);   --inout allow writing and reading this signal from within the architecture
-		 reg_out1 : out std_logic_vector(3 downto 0); 
-		 reg_out2 : out std_logic_vector(3 downto 0)
-		 ); 
+    Port ( 
+        rst: in std_logic;
+        dir: in std_logic; 
+		en: in std_logic ;   
+        clk : in std_logic;
+        reg_in : in std_logic_vector(3 downto 0); 
+        reg_out : out std_logic_vector(3 downto 0);
+        
+        -- \/ Ignore \/ 
+        
+        reg_out_p : out std_logic_vector(3 downto 0);
+		regSL : inout std_logic_vector(3 downto 0);		      -- \
+		regSR : inout std_logic_vector(3 downto 0);           --  |
+		regSLa : inout std_logic_vector(3 downto 0);		  --  } inout allow writing and reading this signal from within the architecture
+		regSRa : inout std_logic_vector(3 downto 0);          --  |
+		regSdir : inout std_logic_vector(3 downto 0);         -- /
+		reg_out1 : out std_logic_vector(3 downto 0); 
+		reg_out2 : out std_logic_vector(3 downto 0)
+		); 
 end register_simple;
 
 architecture Behavioral of register_simple is
  
-
 begin
 
 -- a simple clocked register with reset 
