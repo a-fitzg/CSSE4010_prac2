@@ -66,9 +66,18 @@ begin
     input_gen : process
     begin
         in1 <= x"0";
+        in2 <= x"0";
+        in3 <= x"0";
+        in4 <= x"0";
         wait for 10ps;
-        in1 <= x"9";
+        in1 <= x"0";
         wait for 10ps;
+        in2 <= x"8";
+        wait for 10ps;
+        in3 <= x"7";
+        wait for 10ps;
+        in4 <= x"4";
+        
         wait;
     end process;
     

@@ -1,6 +1,6 @@
 Vivado Simulator 2020.1
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: F:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto a2ba5ced4f504ae08aabeb3e260879cd --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot test_output_decoder_behav xil_defaultlib.test_output_decoder -log elaborate.log 
+Running: F:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto a2ba5ced4f504ae08aabeb3e260879cd --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot test_locktop_async_behav xil_defaultlib.test_locktop_async -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -10,7 +10,10 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
 Compiling package ieee.numeric_std
-Compiling architecture behavioral of entity xil_defaultlib.output_decoder [output_decoder_default]
-Compiling architecture behavioral of entity xil_defaultlib.test_output_decoder
-Built simulation snapshot test_output_decoder_behav
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.register_simple [register_simple_default]
+Compiling architecture structural of entity xil_defaultlib.locktop_async [locktop_async_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_locktop_async
+Built simulation snapshot test_locktop_async_behav

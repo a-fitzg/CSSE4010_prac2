@@ -44,7 +44,7 @@ end output_decoder;
 architecture Behavioral of output_decoder is
 
     -- Unlock code is 0874
-    constant check1 : STD_LOGIC_VECTOR(3 downto 0) := x"9";
+    constant check1 : STD_LOGIC_VECTOR(3 downto 0) := x"0";
     constant check2 : STD_LOGIC_VECTOR(3 downto 0) := x"8";
     constant check3 : STD_LOGIC_VECTOR(3 downto 0) := x"7";
     constant check4 : STD_LOGIC_VECTOR(3 downto 0) := x"4";
@@ -54,10 +54,12 @@ begin
 
     process(in1, in2, in3, in4)
     begin
-        if in1 = check1 then
+        if ((in1 = check1) and (in2 = check2) and (in3 = check3) and (in4 = check4)) then
             unlock <= '1';
+            lock <= '0';
         else
             unlock <= '0';
+            lock <= '1';
         end if;
     end process;
 

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Aug 23 15:22:42 2020
+# Process ID: 11168
+# Current directory: F:/Documents/Uni/3rd Year/CSSE4010/prac2/CSSE4010_prac2/prac2.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source F:/Documents/Uni/3rd Year/CSSE4010/prac2/CSSE4010_prac2/prac2.sim/sim_1/behav/xsim/xsim.dir/test_register_simple_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: F:/Documents/Uni/3rd Year/CSSE4010/prac2/CSSE4010_prac2/prac2.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: F:/Documents/Uni/3rd Year/CSSE4010/prac2/CSSE4010_prac2/prac2.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source F:/Documents/Uni/3rd -notrace
+couldn't read file "F:/Documents/Uni/3rd": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Sun Aug 23 15:22:42 2020...
