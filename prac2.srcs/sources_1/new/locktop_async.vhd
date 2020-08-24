@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------
--- Company: 
+-- Company: CSSE4010
 -- Engineer: Alexander FitzGerald (45330874)
 -- 
 -- Create Date: 23.08.2020 11:57:00
@@ -39,6 +39,7 @@ entity locktop_async is
            RST        : in  STD_LOGIC;
            lock       : out STD_LOGIC;
            unlock     : out STD_LOGIC;
+           extern_clk : in  STD_LOGIC;
            ssd_select : out STD_LOGIC_VECTOR (3 downto 0);
            ssd_bus    : out STD_LOGIC_VECTOR (6 downto 0));
 end locktop_async;
@@ -214,6 +215,19 @@ begin
         --unlock <= unlock,
         --lock <= lock);
 
+    mux : ssd_mux port map (
+        in1    <= digit1_bus,
+        in2    <= digit2_bus,
+        in3    <= digit3_bus,
+        in4    <= digit4_bus,
+        S      <= digit_select_bus,
+        output <= digit_bus);
 
+    bin_counter: binary_counter port map (
+        RST => ,
+        CLK => extern_clk,
+        X => digit_select_bus);
+
+    
 
 end Structural;
