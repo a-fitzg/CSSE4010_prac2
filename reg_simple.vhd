@@ -40,12 +40,12 @@ begin
 -- notice that only one clk'event clause is allowed by XILINX synthesis tools 
 -- (but the simulator allows as nmany you wish) 
 
-reg_out <= "0000" when rst = '1' else reg_in when (clk'event and clk = '1');
+reg_out <= x"A" when rst = '1' else reg_in when (clk'event and clk = '1');
 
 -- reg with enable  (synchronous or asynchronous en ??)   --check what circuit ISE produces in the schematic diagram
-reg_out1 <= "0000" when rst = '1' else reg_in when (clk'event and clk = '1') and (en = '1') ;
+reg_out1 <= x"A" when rst = '1' else reg_in when (clk'event and clk = '1') and (en = '1') ;
 -- also with  enable  (synchronous or asynchronous en ??)   --check what circuit ISE produces in the schematic diagram
-reg_out2 <= "0000" when rst = '1' else (reg_in and en&en&en&en) when (clk'event and clk = '1');
+reg_out2 <= x"A" when rst = '1' else (reg_in and en&en&en&en) when (clk'event and clk = '1');
 -- comment  on differences of the above registers, read K.L.Short "VHDL for Engineers", Chapter 8
 
 
@@ -57,7 +57,7 @@ reg_out2 <= "0000" when rst = '1' else (reg_in and en&en&en&en) when (clk'event 
 process(rst,clk)is
 begin
   if rst = '1' then 	-- asynchronous reset 
-    reg_out_p <= "0000" ; 
+    reg_out_p <= x"A" ; 
   elsif (clk'event and clk = '1') then	--the rising edge chose as the active clock edge 
    reg_out_p <= reg_in; 
   end if ;
