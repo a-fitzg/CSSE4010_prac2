@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 23.08.2020 11:57:00
 -- Design Name: 
--- Module Name: locktop_async - Structural
+-- Module Name: locktop_sync - Structural
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -37,6 +37,7 @@ entity locktop_async is
            b1         : in  STD_LOGIC;
            b2         : in  STD_LOGIC;
            RST        : in  STD_LOGIC;
+		   CLK		  : in  STD_LOGIC;
            lock       : out STD_LOGIC;
            unlock     : out STD_LOGIC;
            ssd_1	  : out STD_LOGIC_VECTOR (6 downto 0);
@@ -59,6 +60,7 @@ architecture Structural of locktop_async is
     signal reset_bus    : STD_LOGIC;
     signal b1_bus       : STD_LOGIC;
     signal b2_bus       : STD_LOGIC;
+	signal clk_bus		: STD_LOGIC;
 
     -- After the registers, the digit saved values are sent to buses
     signal digit1_bus       : STD_LOGIC_VECTOR (3 downto 0);
@@ -100,6 +102,7 @@ architecture Structural of locktop_async is
         input  : in  STD_LOGIC_VECTOR (3 downto 0);
         output : out STD_LOGIC_VECTOR (6 downto 0));
     end component;
+
     
 begin
 
@@ -110,12 +113,13 @@ begin
     b1_bus      <= b1;
     b2_bus      <= b2;
     reset_bus   <= RST;
+	clk_bus		<= CLK;
 
     r1 : register_simple port map (
         rst       => RST,
-        clk       => b1,
+        clk       => clk_bus,
         dir       => '0',
-        en        => '0',
+        en        => b1_bus,
         reg_in    => input1_bus,
         reg_out   => digit1_bus,
         -- Unused signals, all open
@@ -130,9 +134,9 @@ begin
 
     r2 : register_simple port map (
         rst       => RST,
-        clk       => b1,
+        clk       => clk_bus,
         dir       => '0',
-        en        => '0',
+        en        => b1_bus,
         reg_in    => input2_bus,
         reg_out   => digit2_bus,
         -- Unused signals, all open
@@ -147,9 +151,9 @@ begin
         
     r3 : register_simple port map (
         rst       => RST,
-        clk       => b2,
+        clk       => clk_bus,
         dir       => '0',
-        en        => '0',
+        en        => b2_bus,
         reg_in    => input3_bus,
         reg_out   => digit3_bus,
         -- Unused signals, all open
@@ -164,9 +168,9 @@ begin
 
     r4 : register_simple port map (
         rst       => RST,
-        clk       => b2,
+        clk       => clk_bus,
         dir       => '0',
-        en        => '0',
+        en        => b2_bus,
         reg_in    => input4_bus,
         reg_out   => digit4_bus,
         -- Unused signals, all open
