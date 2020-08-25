@@ -47,6 +47,7 @@ architecture Behavioral of test_locktop_async is
            RST        : in  STD_LOGIC;
            lock       : out STD_LOGIC;
            unlock     : out STD_LOGIC;
+           extern_clk : in  STD_LOGIC;
            ssd_select : out STD_LOGIC_VECTOR (3 downto 0);
            ssd_bus    : out STD_LOGIC_VECTOR (6 downto 0));
     end component;
@@ -58,6 +59,7 @@ architecture Behavioral of test_locktop_async is
     signal RST        : STD_LOGIC;
     signal lock       : STD_LOGIC;
     signal unlock     : STD_LOGIC;
+    signal extern_clk : STD_LOGIC;
     signal ssd_select : STD_LOGIC_VECTOR (3 downto 0);
     signal ssd_bus    : STD_LOGIC_VECTOR (6 downto 0);
     
@@ -71,6 +73,7 @@ begin
         RST        => RST,
         lock       => lock,
         unlock     => unlock,
+        extern_clk => extern_clk,
         ssd_select => ssd_select,
         ssd_bus	   => ssd_bus);
 
@@ -81,22 +84,23 @@ begin
         digit_b <= "0000";
         b1 <= '0';
         b2 <= '0';
-        for i in 0 to 7 loop
-            digit_a <= STD_LOGIC_VECTOR(TO_UNSIGNED((i * 2), digit_a'length));
-            digit_b <= STD_LOGIC_VECTOR(TO_UNSIGNED((i * 2) + 1, digit_b'length));
+        --extern_clk <= '0';
+        --for i in 0 to 7 loop
+            digit_a <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, digit_a'length));
+            digit_b <= STD_LOGIC_VECTOR(TO_UNSIGNED(5, digit_b'length));
             wait for 1ps;
             b1 <= '1';
             wait for 1ps;
             b1 <= '0';
  
-            digit_a <= STD_LOGIC_VECTOR(TO_UNSIGNED((i * 2), digit_a'length));
-            digit_b <= STD_LOGIC_VECTOR(TO_UNSIGNED((i * 2) + 1, digit_b'length));           
+            digit_a <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, digit_a'length));
+            digit_b <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, digit_b'length));
             wait for 1ps;
             b2 <= '1';
             wait for 1ps;
             b2 <= '0';
 
-        end loop;
+        --end loop;
     end process;
 
 end Behavioral;

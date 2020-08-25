@@ -1,7 +1,0 @@
-Running: xsim.dir/test_locktop_async_behav/xsimk.exe -simmode gui -wdb test_locktop_async_behav.wdb -simrunnum 0 -socket 57204
-Design successfully loaded
-Design Loading Memory Usage: 5320 KB (Peak: 5320 KB)
-Design Loading CPU Usage: 62 ms
-Simulation completed
-Simulation Memory Usage: 13940 KB (Peak: 13940 KB)
-Simulation CPU Usage: 3171 ms

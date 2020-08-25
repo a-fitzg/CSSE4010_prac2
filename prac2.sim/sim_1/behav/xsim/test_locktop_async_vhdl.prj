@@ -1,7 +1,12 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
+"../../../../prac2.srcs/sources_1/new/binary_counter.vhd" \
+"../../../../prac2.srcs/sources_1/new/binary_decoder.vhd" \
 "../../../../prac2.srcs/sources_1/new/locktop_async.vhd" \
+"../../../../prac2.srcs/sources_1/new/output_decoder.vhd" \
 "../../../../reg_simple.vhd" \
+"../../../../prac2.srcs/sources_1/new/ssd_decoder.vhd" \
+"../../../../prac2.srcs/sources_1/new/ssd_mux.vhd" \
 "../../../../prac2.srcs/sim_1/new/test_locktop_async.vhd" \
 
 # Do not sort compile order

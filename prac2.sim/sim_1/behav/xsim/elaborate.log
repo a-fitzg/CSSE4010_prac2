@@ -14,6 +14,11 @@ Compiling package ieee.std_logic_arith
 Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_unsigned
 Compiling architecture behavioral of entity xil_defaultlib.register_simple [register_simple_default]
+Compiling architecture behavioral of entity xil_defaultlib.output_decoder [output_decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.ssd_mux [ssd_mux_default]
+Compiling architecture behavioral of entity xil_defaultlib.binary_counter [binary_counter_default]
+Compiling architecture behavioral of entity xil_defaultlib.binary_decoder [binary_decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.ssd_decoder [ssd_decoder_default]
 Compiling architecture structural of entity xil_defaultlib.locktop_async [locktop_async_default]
 Compiling architecture behavioral of entity xil_defaultlib.test_locktop_async
 Built simulation snapshot test_locktop_async_behav

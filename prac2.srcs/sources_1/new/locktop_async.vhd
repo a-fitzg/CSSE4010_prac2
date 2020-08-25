@@ -208,26 +208,35 @@ begin
         reg_out2  => open);
 
     dec : output_decoder port map (
-        in1 <= digit1_bus,
-        in2 <= digit2_bus,
-        in3 <= digit3_bus,
-        in4 <= digit4_bus);
+        in1 => digit1_bus,
+        in2 => digit2_bus,
+        in3 => digit3_bus,
+        in4 => digit4_bus);
         --unlock <= unlock,
         --lock <= lock);
 
     mux : ssd_mux port map (
-        in1    <= digit1_bus,
-        in2    <= digit2_bus,
-        in3    <= digit3_bus,
-        in4    <= digit4_bus,
-        S      <= digit_select_bus,
-        output <= digit_bus);
+        in1    => digit1_bus,
+        in2    => digit2_bus,
+        in3    => digit3_bus,
+        in4    => digit4_bus,
+        S      => digit_select_bus,
+        output => digit_bus);
 
     bin_counter: binary_counter port map (
-        RST => ,
+        RST => RST,
         CLK => extern_clk,
         X => digit_select_bus);
 
+    bin_dec : binary_decoder port map (
+        x   => digit_select_bus,
+        d0  => ssd_select(0),
+        d1  => ssd_select(1),
+        d2  => ssd_select(2),
+        d3  => ssd_select(3));
     
+    ssd_dec : ssd_decoder port map (
+        input   => digit_bus,
+        output  => ssd_bus);
 
 end Structural;
